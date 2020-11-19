@@ -3380,7 +3380,6 @@ console.log('marketList Length=> ', marketsList.length)
         let query = {"marketTime": {'$gte': openDate},"state.status": {$ne:"CLOSED"}}
         let marketsList = await db.collection('markets').find(query).sort({"marketTime": 1}).toArray()
         let oddArray = []
-        console.log('marketslength=>', marketsList.length)
         if(index % 4 == 1){
             if(marketsList.length > 0){
                 for(i = 0 ; i < marketsList.length; i++){
